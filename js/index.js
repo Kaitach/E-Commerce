@@ -11,15 +11,21 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
+    document.getElementById("Salir").addEventListener("click", function() {
+        sessionStorage.clear();
+    });
 });
 
-localStorage.setItem("visita", 0);
-console.log(localStorage.visita)
-if (localStorage.getItem("localStorage.visita" ) <= 0) {
+function visitas(id) {
+    sessionStorage.setItem("visi", id);
+  }
+var visitas = sessionStorage.getItem("visi");
+
+if (visitas <= 0) {
     window.location.replace("login.html");
-    localStorage.visita = Number(localStorage.visita) + 1;
-    console.log(localStorage.visita)
+    sessionStorage.setItem("visi", 1);
+    console.log(sessionStorage.visita)
 }
 
-localStorage.visita = Number(localStorage.visita) + 1;
+
  
