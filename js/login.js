@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("formulario").addEventListener('submit', validarFormulario); 
-  localStorage.visita = Number(localStorage.visita) + 1;
       });
       
       function validarFormulario(evento) {
@@ -28,4 +27,3 @@ function onSignIn(googleUser) {
         console.log('Email: ' + profile.getEmail());
 };
     
- 
