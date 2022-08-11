@@ -12,3 +12,14 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+localStorage.setItem("visita", 0);
+console.log(localStorage.visita)
+if (localStorage.getItem("localStorage.visita" ) <= 0) {
+    window.location.replace("login.html");
+    localStorage.visita = Number(localStorage.visita) + 1;
+    console.log(localStorage.visita)
+}
+
+localStorage.visita = Number(localStorage.visita) + 1;
+ 
