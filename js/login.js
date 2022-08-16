@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 
-
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);
+  localStorage.setItem("profile", JSON.stringify(responsePayload));
   window.location.href = "index.html";
-
 }
+
 
 function parseJwt (token) {
   var base64Url = token.split('.')[1];
