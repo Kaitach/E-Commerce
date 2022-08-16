@@ -46,7 +46,7 @@ function onSignIn(googleUser) {
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);
-
+  window.location.href = "index.html";
   console.log("ID: " + responsePayload.sub);
   console.log('Full Name: ' + responsePayload.name);
   console.log('Given Name: ' + responsePayload.given_name);
