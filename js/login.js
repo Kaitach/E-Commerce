@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);
-  localStorage.setItem("profile", JSON.stringify(responsePayload));
   window.location.href = "index.html";
 }
 
@@ -48,7 +47,6 @@ function parseJwt (token) {
   }).join(''));
 
   return JSON.parse(jsonPayload);
-    window.location.href = "index.html";
 
 };
 
