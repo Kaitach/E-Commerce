@@ -38,8 +38,7 @@ function parseJwt (token) {
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);
-  localStorage.setItem("profile", JSON.stringify(responsePayload));
-  window.location.href = "index.html";
+  
 }
 
 function decodeJwtResponse (token) {
