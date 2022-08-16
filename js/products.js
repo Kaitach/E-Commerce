@@ -1,5 +1,10 @@
 let idproducto = [];
 var categoriaid = localStorage.getItem("catID");
+
+function setproID(id) {
+  localStorage.setItem("pro", id);
+  window.location = "product-info.html"
+}
 async function listado() {
   fetch(
     `https://japceibal.github.io/emercado-api/cats_products/` +
@@ -10,17 +15,18 @@ async function listado() {
     .then((data) => {
       listautos(data.products);
     });
+    console.log(listautos)
 }
 
 function listautos(idproducto) {
   console.log(idproducto);
   let htmlContentToAppend = "";
   for (let i = 0; i < idproducto.length; i++) {
-    const producto = idproducto[i + 0];
+    const producto = idproducto[i];
     
                  
     htmlContentToAppend +=
-      `
+      `            <div onclick="setproID(${producto.id})" class="list-group-item list-group-item-action cursor-active">
                     <div class="row">
                         <div class="col-4">
                             <img src=" ${producto.image}  " alt="` +idproducto.ID +`" class="img-thumbnail">

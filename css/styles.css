@@ -195,3 +195,15 @@ a.custom-card:hover {
   margin: auto;
   text-align: center;
 }
+
+.perfilimg{
+    width:50px;
+    height:50px;
+    
+}
+
+#estrellas{
+  float: right;
+  text-align: center;
+
+}
