@@ -1,10 +1,14 @@
+// Variables 
 let idproducto = [];
 var categoriaid = localStorage.getItem("catID");
 
+// funncion para setear el id del producto lo usaremos para product information
 function setproID(id) {
   localStorage.setItem("pro", id);
   window.location = "product-info.html"
 }
+
+// aca cargamos el json 
 async function listado() {
   fetch(
     `https://japceibal.github.io/emercado-api/cats_products/` +
@@ -13,19 +17,22 @@ async function listado() {
   )
     .then((res) => res.json())
     .then((data) => {
-      listautos(data.products);
+      productos(data.products);
     });
-    console.log(listautos)
+  
+   
 }
 
-function listautos(idproducto) {
+// aca hacemos la magia para que nos muestre en nuestro HTML  el listado de productos
+
+function productos(idproducto) {
   console.log(idproducto);
-  let htmlContentToAppend = "";
+  let productosHTML = "";
   for (let i = 0; i < idproducto.length; i++) {
     const producto = idproducto[i];
     
                  
-    htmlContentToAppend +=
+    productosHTML +=
       `            <div onclick="setproID(${producto.id})" class="list-group-item list-group-item-action cursor-active">
                     <div class="row">
                         <div class="col-4">
@@ -42,10 +49,12 @@ function listautos(idproducto) {
                 </div>
                 
                 `;
-    document.getElementById("productos").innerHTML = htmlContentToAppend;
+    document.getElementById("productos").innerHTML = productosHTML;
     }
     
 }
 
+// ejecutamos la funciones 
+
 listado();
-listautos();
+productos();
