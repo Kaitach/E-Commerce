@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       });
 
+let datos = {  name: usuario,
+            email: tucorreo,         
+            picture: "img/monosonrie.jpeg",
+            sub: 785412
+          }
+sessionStorage.setItem("datos", JSON.stringify(datos));
+          location.href = "index.html";
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);  
@@ -15,11 +22,7 @@ function handleCredentialResponse(response) {
   window.location.href = "index.html";
   
 }
-let datos = {  name: usuario,
-            email: tucorreo@gmail,         
-            picture: "img/monosonrie.jpeg",
-            sub: 785412
-          }
+
 
 function decodeJwtResponse (token) {
   var base64Url = token.split('.')[1];
