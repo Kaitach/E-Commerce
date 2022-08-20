@@ -42,9 +42,16 @@ function handleCredentialResponse(response) {
   console.log('Family Name: ' + responsePayload.family_name);
   console.log("Image URL: " + responsePayload.picture);
   console.log("Email: " + responsePayload.email);
-  Inputuser = responsePayload.getName();
-   Contraseña = Contraseña();
-        regBtn = SubmitEvent();
+  let datos = {}
+  var usuario = document.getElementById('Inputuser').value;
+  var clave = document.getElementById('Password').value;
+  usuario = profile.getName();
+  clave = Contraseña();
+  datos.usuario = usuario;
+  datos.clave = clave;
+  sessionStorage.setItem("datos", JSON.stringify(datos));
+  location.href ="index.html"
+  
 }
 
 function decodeJwtResponse (token) {
