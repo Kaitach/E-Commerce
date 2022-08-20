@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `
   }
   else {
+    alert("putodemierda")
     document.getElementById('Perfil').innerHTML = `     
     
   <div class="mb-2"  class="container" >
