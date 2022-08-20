@@ -50,7 +50,8 @@ function handleCredentialResponse(response) {
   datos.usuario = usuario;
   datos.clave = clave;
   sessionStorage.setItem("datos", JSON.stringify(datos));
-  location.href ="index.html"
+  window.location.replace("index.html");
+
   
 }
 
