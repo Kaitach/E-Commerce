@@ -8,9 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function handleCredentialResponse(response) {
-  const responsePayload = decodeJwtResponse(response.credential);
-  localStorage.setItem("datosg", JSON.stringify(responsePayload));
+  const responsePayload = decodeJwtResponse(response.credential);  
+  let datos = {  name: usuario,
+            email: tucorreo@gmail.com,         
+            picture: "img/monosonrie.jpeg",
+            sub: 785412
+          }}
   sessionStorage.setItem("visi", 10);
+  
 
   window.location.href = "index.html";
   
