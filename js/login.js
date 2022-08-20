@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       });
 
-let datos = {  name: usuario,
-            email: tucorreo,         
+
+let datos = {  name: "usuario",
+            email: "tucorreo",
+            direccion:"tu casa",
             picture: "img/monosonrie.jpeg",
             sub: 785412
           }
