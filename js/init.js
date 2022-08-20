@@ -8,9 +8,6 @@ const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
 
-
-
-
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
@@ -48,7 +45,7 @@ let datoMenu = JSON.parse(sessionStorage.getItem('datos'));
 document.getElementById('dropdown').innerHTML =  `  <button class="btn btn-secondary dropdown-toggle" type="button"   id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">     
 ` + datoMenu.usuario + ` </button>
 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <img  id="img1" class="perfilimg" src="img/monosonrie.jpeg" >
+    <img  id="img1" class="perfilimg" src="${datoMenu.foto}" >
     <a class="dropdown-item" href="cart.html">Carrito</a>
     <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
     <a class="dropdown-item" href="sell.html">Vender</a>

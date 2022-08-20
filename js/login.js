@@ -5,6 +5,33 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("formulario").addEventListener('submit', validarFormulario); 
 
       });
+
+
+let datos = {  usuario: "usuario",
+            email: "tucorreo",
+            direccion:"tu casa",
+            foto: "img/monosonrie.jpeg",
+            sub: 785412
+          }
+sessionStorage.setItem("datos", JSON.stringify(datos));
+
+function handleCredentialResponse(response) {
+  const responsePayload = decodeJwtResponse(response.credential);  
+  sessionStorage.setItem("visi", 10); 
+  window.location.href = "index.html";
+  
+}
+
+
+function decodeJwtResponse (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+  return JSON.parse(jsonPayload);
+};
+
   
       function user(id) {
         sessionStorage.setItem("user", id);
@@ -20,50 +47,35 @@ document.addEventListener("DOMContentLoaded", function () {
           alert('No has escrito nada en el usuario');
           return;
         }
-        else{
-          datos.usuario = usuario;
-          datos.clave = clave;
-          sessionStorage.setItem("datos", JSON.stringify(datos));
-          location.href ="index.html";
-         
-        
+      else {
+          name= usuario.split("@")[0];
+          const datos = {
+            usuario: name,
+            email: usuario,         
+            foto: "img/monosonrie.jpeg",
+            sub: 785412
           }
-            
-};
-function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); 
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-        Inputuser = profile.getName();
-        Contraseña = Contraseña();
-        regBtn = SubmitEvent();
+          sessionStorage.setItem("datos", JSON.stringify(datos));
+          sessionStorage.setItem("visi", 10);
+          location.href = "index.html";
         
+
+
+          }     
 };
+
+function visitas(id) {
+  sessionStorage.setItem("visi", id);
+}
+var visitas = sessionStorage.getItem("visi");
+
+if (visitas > 1) {
+  window.location.replace("index.html");    
+}
+
   
 
 
-function handleCredentialResponse(response) {
-  const responsePayload = decodeJwtResponse(response.credential);
-  window.location.href = "index.html";
-  console.log("ID: " + responsePayload.sub);
-  console.log('Full Name: ' + responsePayload.name);
-  console.log('Given Name: ' + responsePayload.given_name);
-  console.log('Family Name: ' + responsePayload.family_name);
-  console.log("Image URL: " + responsePayload.picture);
-  console.log("Email: " + responsePayload.email);
-  console.log(document.cookie)
-}
 
-function parseJwt (token) {
-  var base64Url = token.split('.')[1];
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
-
-  return JSON.parse(jsonPayload);
-};
 
 
