@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);
-  localStorage.setItem("datos", JSON.stringify(responsePayload));
+  localStorage.setItem("datosg", JSON.stringify(responsePayload));
   window.location.href = "index.html";
   
 }
