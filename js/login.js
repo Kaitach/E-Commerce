@@ -20,12 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
           alert('No has escrito nada en el usuario');
           return;
         }
-        else{
-          datos.usuario = usuario;
-          datos.clave = clave;
+      else {
+          name= usuario.split("@")[0];
+          const datos = {
+            name: name,
+            email: usuario,         
+            picture: "img/monosonrie.jpeg"
+          }
           sessionStorage.setItem("datos", JSON.stringify(datos));
-          location.href ="index.html";                
-          }           
+          location.href = "index.html";
+
+          }     
 };
 
   
@@ -47,13 +52,4 @@ function decodeJwtResponse (token) {
   return JSON.parse(jsonPayload);
 };
 
-const datosUser = JSON.parse(localStorage.getItem("datosUser"))
 
-if (datosUser = !null) {
-    let datos = {}
-    datos.usuario = datosUser.name;;
-    datos.correo = datosUser.email;
-    datos.clave = clave;
-    datos.imagenDePerfil = datosUser.picture ;
-    sessionStorage.setItem("datos", JSON.stringify(datos));
-    location.href = "index.html"; }
