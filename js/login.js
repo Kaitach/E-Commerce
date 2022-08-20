@@ -7,17 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
 
-let datos = {  usuario: "usuario",
+let datos = {  name: "usuario",
             email: "tucorreo",
             direccion:"tu casa",
-            foto: "img/monosonrie.jpeg",
+            picture: "img/monosonrie.jpeg",
             sub: 785412
           }
 sessionStorage.setItem("datos", JSON.stringify(datos));
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);  
-  sessionStorage.setItem("visi", 10); 
+  sessionStorage.setItem("visi", 10);
+  
+
   window.location.href = "index.html";
   
 }
@@ -50,9 +52,9 @@ function decodeJwtResponse (token) {
       else {
           name= usuario.split("@")[0];
           const datos = {
-            usuario: name,
+            name: name,
             email: usuario,         
-            foto: "img/monosonrie.jpeg",
+            picture: "img/monosonrie.jpeg",
             sub: 785412
           }
           sessionStorage.setItem("datos", JSON.stringify(datos));
