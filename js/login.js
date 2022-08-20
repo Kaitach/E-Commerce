@@ -30,17 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
             
 };
-function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); 
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-        Inputuser = profile.getName();
-        Contraseña = Contraseña();
-        regBtn = SubmitEvent();
-        
-};
+
   
 
 
@@ -52,6 +42,9 @@ function handleCredentialResponse(response) {
   console.log('Family Name: ' + responsePayload.family_name);
   console.log("Image URL: " + responsePayload.picture);
   console.log("Email: " + responsePayload.email);
+  Inputuser = profile.getName();
+     Contraseña = Contraseña();
+        regBtn = SubmitEvent();
 }
 
 function decodeJwtResponse (token) {
