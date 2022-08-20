@@ -22,9 +22,7 @@ function visitas(id) {
 var visitas = sessionStorage.getItem("visi");
 
 if (visitas <= 0) {
-    window.location.replace("login.html");
-    sessionStorage.setItem("visi", 1);
-    console.log(sessionStorage.visita)
+    window.location.replace("login.html");    
 }
 
 
