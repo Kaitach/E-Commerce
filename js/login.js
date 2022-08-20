@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);
   localStorage.setItem("datosg", JSON.stringify(responsePayload));
+  sessionStorage.setItem("visi", 10);
+
   window.location.href = "index.html";
   
 }
@@ -48,6 +50,8 @@ function decodeJwtResponse (token) {
           }
           sessionStorage.setItem("datos", JSON.stringify(datos));
           location.href = "index.html";
+          sessionStorage.setItem("visi", 10);
+
 
           }     
 };
