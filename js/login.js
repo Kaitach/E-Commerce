@@ -43,7 +43,8 @@ function decodeJwtResponse (token) {
           const datos = {
             name: name,
             email: usuario,         
-            picture: "img/monosonrie.jpeg"
+            picture: "img/monosonrie.jpeg",
+            sub: 785412
           }
           sessionStorage.setItem("datos", JSON.stringify(datos));
           location.href = "index.html";
