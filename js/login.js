@@ -52,6 +52,15 @@ function decodeJwtResponse (token) {
           }     
 };
 
+function visitas(id) {
+  sessionStorage.setItem("visi", id);
+}
+var visitas = sessionStorage.getItem("visi");
+
+if (visitas > 1) {
+  window.location.replace("index.html");    
+}
+
   
 
 
