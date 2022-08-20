@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);
-  localStorage.setItem("datosUser", JSON.stringify(responsePayload));
+  localStorage.setItem("datos", JSON.stringify(responsePayload));
   window.location.href = "index.html";
   
 }
