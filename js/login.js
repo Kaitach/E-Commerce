@@ -59,8 +59,9 @@ function decodeJwtResponse (token) {
             sub: 785412
           }
           sessionStorage.setItem("datos", JSON.stringify(datos));
-          location.href = "index.html";
           sessionStorage.setItem("visi", 10);
+          location.href = "index.html";
+        
 
 
           }     
