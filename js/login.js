@@ -14,7 +14,6 @@ let datos = {  name: "usuario",
             sub: 785412
           }
 sessionStorage.setItem("datos", JSON.stringify(datos));
-          location.href = "index.html";
 
 function handleCredentialResponse(response) {
   const responsePayload = decodeJwtResponse(response.credential);  
