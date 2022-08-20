@@ -45,8 +45,8 @@ function handleCredentialResponse(response) {
   let datos = {}
   var usuario = document.getElementById('Inputuser').value;
   var clave = document.getElementById('Password').value;
-  usuario = profile.getName();
-  clave = Contraseña();
+  usuario = profile.email;
+  clave = Contraseña;
   datos.usuario = usuario;
   datos.clave = clave;
   sessionStorage.setItem("datos", JSON.stringify(datos));
