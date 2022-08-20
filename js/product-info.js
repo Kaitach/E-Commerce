@@ -180,17 +180,17 @@ function enviarcomentario() {
   let now = new Date()
   let opinion = document.getElementById("opinion").value;  
   let valor = 0
-  if (document.getElementById("radio1").checked === true ){
+  if (document.getElementById("radio1").checked ){
     valor = document.getElementById("radio1").value }
-  else if (document.getElementById("radio2").checked === true){
+  else if (document.getElementById("radio2").checked ){
     valor = document.getElementById("radio2").value 
   }
-  else if (document.getElementById("radio3").checked === true){
+  else if (document.getElementById("radio3").checked){
     valor = document.getElementById("radio3").value
   }
-  else if (document.getElementById("radio4").checked === true) {
+  else if (document.getElementById("radio4").checked ) {
     valor = document.getElementById("radio4").value
-  } else if (document.getElementById("radio5").checked === true){
+  } else if (document.getElementById("radio5").checked ){
     valor = document.getElementById("radio5").value
   }
   else {
@@ -222,8 +222,12 @@ function enviarcomentario() {
 </div>
           `;
       document.getElementById("comentarioNuevo").innerHTML += opi;
-
-   
+  document.getElementById("opinion").value = " ";
+  document.getElementById("radio1").checked = false;
+  document.getElementById("radio2").checked = false;
+  document.getElementById("radio3").checked = false;
+  document.getElementById("radio4").checked = false;
+  document.getElementById("radio5").checked = false;
 };
 
 // ejecutamos las funciones 
