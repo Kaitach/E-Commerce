@@ -19,7 +19,7 @@ let datos = {  name: usuario,
             email: tucorreo@gmail,         
             picture: "img/monosonrie.jpeg",
             sub: 785412
-          }}
+          }
 
 function decodeJwtResponse (token) {
   var base64Url = token.split('.')[1];
